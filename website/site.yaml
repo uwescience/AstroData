@@ -32,21 +32,21 @@ context:
                 description: Schedule
                 css_class: schedule
                 type: page
-                url: schedule.html
+                url: index.html
 
             -
                 name: PEOPLE
                 description: People
                 css_class: people
                 type: page
-                url: people.html
+                url: index.html
 
             -
                 name: SPONSORS
                 description: Sponsors
                 css_class: sponsors
                 type: page
-                url: sponsors.html
+                url: index.html
 
 meta:
     nodemeta: meta.yaml

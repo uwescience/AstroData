@@ -1,4 +1,5 @@
 *~
 website/.hyde_deps
+website/_build
 website/deploy
 website/deploy_production

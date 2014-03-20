@@ -3,5 +3,5 @@ extends: site.yaml
 mode: production
 deploy_root: deploy_production
 
-base_url: /AstroStats/
-media_url: /AstroStats/media
+base_url: /AstroData/
+media_url: /AstroData/media

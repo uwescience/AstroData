@@ -1,6 +1,6 @@
 GITUSER=uwescience
 REPONAME=AstroData
-OUTPUTDIR = build_production
+OUTPUTDIR = deploy_production
 
 .PHONY: clean gen serve
 
