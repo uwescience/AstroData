@@ -1,1 +1,4 @@
 *~
+website/.hyde_deps
+website/deploy
+website/deploy_production

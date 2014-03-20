@@ -1,0 +1,46 @@
+<!doctype html>
+<head>
+  {% block starthead %}{% endblock starthead %}
+  <meta charset="{{ resource.meta.charset }}">
+
+  <title>{% block title %}{{ resource.meta.title }}{% endblock %}</title>
+  <meta name="description" content="{{ resource.meta.description }}">
+  <meta name="author" content="{{ resource.meta.author }}">
+
+  <!--  Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="{{ resource.meta.viewport }}">
+
+  {% block favicons %}
+  <!-- Place favicon.ico
+        in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="{{ content_url('/favicon.ico') }}">
+  {% endblock favicons %}
+
+  {% block css %}
+  <link rel="stylesheet" href="{{ media_url('css/site.css') }}">
+  {% endblock css %}
+
+  {% block headjs %}
+  {% endblock headjs %}
+  {% block endhead %}{% endblock endhead %}
+</head>
+<body id="{{ resource.meta.id if resource.meta.id else resource.slug }}">
+
+  {% block main %}
+    {% block nav %}
+      {% from "macros.j2" import render_nav with context %}
+      {{ render_nav(menu, 'main_nav') }}
+    {% endblock nav %}
+    {% filter markdown -%}
+      {% block content %}
+      {% endblock content %}
+    {%- endfilter %}
+  {% endblock main %}
+
+
+  {% block js %}
+  {% block scripts %}
+    <script defer="defer" src="{{ media_url('js/main.js') }}"></script>
+  {% endblock scripts %}
+  {% endblock js %}
+</body>
