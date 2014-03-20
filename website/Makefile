@@ -1,3 +1,7 @@
+GITUSER=uwescience
+REPONAME=AstroData
+OUTPUTDIR = build_production
+
 .PHONY: clean gen serve
 
 all: clean gen
@@ -15,4 +19,15 @@ update: gen
 
 publish:
 	hyde gen -c production.yaml
-#	rsync -e ssh -r deploy_production/ gateway.astro.washington.edu:/www/astro/users/vanderplas/html/Astr599/
+	if test -d _build; \
+	then echo " (_build directory exists)"; \
+	else mkdir _build; \
+	fi
+	if test -d _build/$(REPONAME); \
+	then echo "  (repository directory exists)"; \
+	else cd _build && git clone git@github.com:$(GITUSER)/$(REPONAME).git; \
+	fi
+	cd _build/$(REPONAME) && git checkout gh-pages;
+	rsync -r $(OUTPUTDIR)/* _build/$(REPONAME)/
+	cd _build/$(REPONAME) && git add . && git commit -m "update site"
+	cd _build/$(REPONAME) && git push origin gh-pages
