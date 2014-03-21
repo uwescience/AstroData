@@ -28,6 +28,13 @@ context:
                 url: index.html
 
             -
+                name: ABOUT
+                description: About
+                css_class: about
+                type: onpage
+                url: about
+
+            -
                 name: SCHEDULE
                 description: Schedule
                 css_class: schedule
