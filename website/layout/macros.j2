@@ -17,7 +17,7 @@
         <li>
             <a title="{{ item.description }}"
                 class="{{ classes|join(' ') }}"
-                href="{{ "#" + item.url if item.type=="onpage" else content_url(item.url) }}">
+                href="{{ "#" + item.url if item.type=="onpage" else content_url(item.url) if item.type=="page" else item.url }}">
                 {{ item.name }}
             </a>
         </li>

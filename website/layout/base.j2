@@ -40,6 +40,10 @@
 
 
   {% block js %}
+  {% block jquery %}
+  <script src="{{ media_url('js/jquery-1.11.0.min.js') }}"></script>
+  {% endblock jquery %}
+
   {% block scripts %}
     <script defer="defer" src="{{ media_url('js/main.js') }}"></script>
   {% endblock scripts %}

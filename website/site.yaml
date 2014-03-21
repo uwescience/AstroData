@@ -24,8 +24,8 @@ context:
                 name: HOME
                 description: Homepage
                 css_class: home
-                type: page
-                url: index.html
+                type: onpage
+                url: home
 
             -
                 name: ABOUT
@@ -38,22 +38,22 @@ context:
                 name: SCHEDULE
                 description: Schedule
                 css_class: schedule
-                type: page
-                url: index.html
+                type: onpage
+                url: schedule
 
             -
                 name: PEOPLE
                 description: People
                 css_class: people
-                type: page
-                url: index.html
+                type: onpage
+                url: people
 
             -
                 name: SPONSORS
                 description: Sponsors
                 css_class: sponsors
-                type: page
-                url: index.html
+                type: onpage
+                url: sponsors
 
 meta:
     nodemeta: meta.yaml
