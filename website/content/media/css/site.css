@@ -106,3 +106,7 @@ a {
 a:hover {
   color: #99cc00;
 }
+
+a.active {
+  color: #99cc00;
+}
