@@ -27,7 +27,7 @@ publish:
 	then echo "  (repository directory exists)"; \
 	else cd _build && git clone git@github.com:$(GITUSER)/$(REPONAME).git; \
 	fi
-	cd _build/$(REPONAME) && git checkout gh-pages;
+	cd _build/$(REPONAME) && git checkout gh-pages && git pull;
 	rsync -r $(OUTPUTDIR)/* _build/$(REPONAME)/
 	cd _build/$(REPONAME) && git add . && git commit -m "update site"
 	cd _build/$(REPONAME) && git push origin gh-pages
