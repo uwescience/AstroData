@@ -11,6 +11,8 @@ div.block{
     max-width: 800px;
     margin: auto;
     text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 nav.main_nav{
