@@ -7,13 +7,10 @@ body{
     text-align: center;
 }
 
-a {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #99cc00;
+div.block{
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
 }
 
 nav.main_nav{
@@ -32,11 +29,12 @@ nav.main_nav{
 
 .main_nav li{
     float: left;
-    width: 25%;
+    width: 20%;
 }
 
-section#top{
-    background-image: url(../images/UW-dark.jpg);
+.main_nav a {
+  color: #ffffff;
+  text-decoration: none;
 }
 
 section{
@@ -51,16 +49,58 @@ section{
     padding-bottom: 8em;
 }
 
-#top h1{
+section#top{
+    background-image: url(../images/UW-dark.jpg);
+}
+
+section#top h1{
     font-weight: 100;
     font-size: 3em;
     letter-spacing: 0;
     margin: 1em 0;
 }
 
-#top h2{
+section#top h2{
     font-weight: 100;
     font-size: 2em;
     letter-spacing: 0;
     margin: 1em 0;
+}
+
+section#info{
+    background: #eeeeee;
+    border-bottom: none;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+section#info p{
+    text-align: left;
+    font-size: 1.2em;
+    color: #222222;
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+section#seattle{
+    background-image: url(../images/Seattle.jpg);
+}
+
+::selection {
+	background: #99cc00; /* Safari */
+	}
+::-moz-selection {
+	background: #99cc00; /* Firefox */
+}
+
+a {
+  color: #006622;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #99cc00;
 }
