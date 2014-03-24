@@ -69,14 +69,14 @@ section#top h2{
     margin: 1em 0;
 }
 
-section#info{
+section.text{
     background: #eeeeee;
     border-bottom: none;
     padding-top: 2em;
     padding-bottom: 2em;
 }
 
-section#info p{
+section.text p{
     text-align: left;
     font-size: 1.2em;
     color: #222222;
@@ -89,6 +89,18 @@ section#info p{
 
 section#seattle{
     background-image: url(../images/Seattle.jpg);
+}
+
+section#fountain{
+    background-image: url(../images/fountain.jpg);
+}
+
+section#fall-leaves{
+    background-image: url(../images/fall-leaves.jpg);
+}
+
+section#uwcampus{
+    background-image: url(../images/UW-small.jpg);
 }
 
 ::selection {
