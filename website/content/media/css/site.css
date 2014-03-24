@@ -113,6 +113,8 @@ section#fall-leaves{
 
 section#uwcampus{
     background-image: url(../images/UW-dark.jpg);
+    padding-top: 2em;
+    padding-bottom: 2em;
 }
 
 ::selection {
@@ -133,4 +135,8 @@ a:hover {
 
 a.active {
   color: #99cc00;
+}
+
+img.logo {
+   height: 80px;
 }
