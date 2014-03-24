@@ -1,7 +1,7 @@
 body{
     font: 16px 'Raleway', sans-serif;
     color: #dddddd;
-    background: #FFF;
+    background: #eeeeee;
     margin: 0;
     display: block;
     text-align: center;
@@ -70,7 +70,6 @@ section#top h2{
 }
 
 section.text{
-    background: #eeeeee;
     border-bottom: none;
     padding-top: 2em;
     padding-bottom: 2em;
@@ -87,6 +86,19 @@ section.text p{
     -webkit-margin-end: 0px;
 }
 
+section.footer{
+    border-bottom: none;
+    padding-top: 0em;
+    padding-bottom: 0em;
+}
+
+section.footer p{
+    font-size: 0.7em;
+    text-align: center;
+    color: #222222;
+    display: block;
+}
+
 section#seattle{
     background-image: url(../images/Seattle.jpg);
 }
@@ -100,7 +112,7 @@ section#fall-leaves{
 }
 
 section#uwcampus{
-    background-image: url(../images/UW-small.jpg);
+    background-image: url(../images/UW-dark.jpg);
 }
 
 ::selection {
