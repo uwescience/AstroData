@@ -27,15 +27,18 @@
 {%- endif %}
 {%- endmacro %}
 
-{% macro gen_bio(img, name, twitter, github, bio) -%}
+{% macro gen_bio(img, name, twitter, github, website, bio) -%}
    <div class="bio">
      <img src="{{ media_url(img) }}" class="biopic" align="left">
      <p><b>{{ name }}</b>
      <a href="http://twitter.com/{{ twitter }}">
-       <img src="{{ media_url("images/twitter-black.png") }}" class="icon">
+       <img src="{{ media_url("images/twitter-black.png") }}" class="icon" alt="twitter" title="twitter">
      </a>
      <a href="http://github.com/{{ github }}">
-       <img src="{{ media_url("images/github-black.png") }}" class="icon">
+       <img src="{{ media_url("images/github-black.png") }}" class="icon" alt="github" title="github">
+     </a>
+     <a href="{{ website }}">
+       <img src="{{ media_url("images/www-black.png") }}" class="icon" alt="website" title="website">
      </a></p>
      {{ bio }}
    </div>
