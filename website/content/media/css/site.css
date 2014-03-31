@@ -1,6 +1,6 @@
 body{
     font: 16px 'Raleway', sans-serif;
-    color: #dddddd;
+    color: #222222;
     background: #eeeeee;
     margin: 0;
     display: block;
@@ -58,15 +58,27 @@ section#top{
 section#top h1{
     font-weight: 100;
     font-size: 3em;
+    color: #dddddd;
     letter-spacing: 0;
     margin: 1em 0;
+    text-align: center;
 }
 
 section#top h2{
     font-weight: 100;
     font-size: 2em;
+    color: #dddddd;
     letter-spacing: 0;
     margin: 1em 0;
+    text-align: center;
+}
+
+section h2{
+    text-align: left;
+}
+
+section h3{
+    text-align: left;
 }
 
 section.text{
@@ -139,4 +151,9 @@ a.active {
 
 img.logo {
    height: 80px;
+}
+
+div.bio img{
+    margin-right: 1.0em;
+    margin-bottom: 1.0em;
 }
