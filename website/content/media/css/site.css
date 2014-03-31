@@ -149,11 +149,28 @@ a.active {
   color: #99cc00;
 }
 
+div.bio h3{
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
+
 img.logo {
    height: 80px;
 }
 
-div.bio img{
+img.biopic{
+    width: 150px;
+    align: left;
     margin-right: 1.0em;
     margin-bottom: 1.0em;
+}
+
+img.icon{
+   margin-left: 0.2em;
+   height: 16px;
+   opacity: 0.3;
+}
+
+img.icon:hover {
+   opacity: 0.8;
 }

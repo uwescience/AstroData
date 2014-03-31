@@ -26,3 +26,18 @@
 </nav>
 {%- endif %}
 {%- endmacro %}
+
+{% macro gen_bio(img, name, twitter, github, bio) -%}
+   <div class="bio">
+     <img src="{{ media_url(img) }}" class="biopic" align="left">
+     <p><b>{{ name }}</b>
+     <a href="http://twitter.com/{{ twitter }}">
+       <img src="{{ media_url("images/twitter-black.png") }}" class="icon">
+     </a>
+     <a href="http://github.com/{{ github }}">
+       <img src="{{ media_url("images/github-black.png") }}" class="icon">
+     </a></p>
+     {{ bio }}
+   </div>
+   <hr>
+{%- endmacro %}
