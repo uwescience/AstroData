@@ -53,22 +53,31 @@
   {% block scripts %}
     <script defer="defer" src="{{ media_url('js/main.js') }}"></script>
     <script type="text/JavaScript">
-      var currentBio = null;
-      function displayBio(srcID, destID){
-        if(currentBio == srcID){
-          currentBio = null;
-          $("#" + destID).hide(400,
-                function(){
-                   document.getElementById(destID).innerHTML = "";
-                   $(".biopic").css({opacity:1.0});
-                });
-        }else{
-          currentBio = srcID;
-          $(".biopic").css({opacity:0.3});
-          $("#biopic" + srcID).css({opacity:1.0});
-          $("#" + destID).hide()
+      var currentID = null;
+      function displayBio(srcID){
+        var imgID = "biopic" + srcID;
+        var destID = "displayBio" + srcID;
+
+        // first time around we move the content of the hidden bio div to
+        // the correctly-placed destination div
+        if ($("#" + destID).length == 0){
+          var section = $("#" + srcID).parent().parent();
+          section.append("<div class='block' id='" + destID + "' style='display:none;'></div>");
           document.getElementById(destID).innerHTML = document.getElementById(srcID).innerHTML;
-          $("#" + destID).show(400);
+          $("#" + srcID).remove();
+        }
+        if(currentID == srcID){
+          // clicking on the highlighted picture: hide the bio
+          $(".biopic").animate({opacity:1.0}, 200);
+          $("#" + destID).hide(200);
+          currentID = null;
+        }else{
+          // clicking on a non-highlighted picture: switch bios
+          if(currentID !== null){$("#displayBio" + currentID).hide(200);}
+          $("#" + imgID).animate({opacity:1.0}, 200);
+          $(".biopic").not("#" + imgID).animate({opacity:0.3}, 200);
+          $("#" + destID).show(200);
+          currentID = srcID;
         }
       }
     </script>

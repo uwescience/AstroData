@@ -32,7 +32,8 @@
    <div class="bio" style="float:left">
      <img src="{{ media_url(img) }}"
         class="biopic" id="biopic{{ bioid }}" align="left"
-        onclick="displayBio('{{ bioid }}', 'fullbio');">
+         onclick="displayBio('{{ bioid }}', 'fullbio');">
+     <p><b onclick="displayBio('{{ bioid }}', 'fullbio');">{{ name }}</b></p>
    </div>
    <div id="{{ bioid }}" style="display: none;">
      <p><b>{{ name }}</b>
