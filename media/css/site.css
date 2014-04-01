@@ -13,6 +13,7 @@ div.block{
     text-align: center;
     padding-left: 20px;
     padding-right: 20px;
+    overflow: hidden;
 }
 
 nav.main_nav{
@@ -149,9 +150,19 @@ a.active {
   color: #99cc00;
 }
 
+div.bio{
+    width: 20%;
+}
+
 div.bio h3{
     margin-top: 0em;
     margin-bottom: 0em;
+}
+
+div.bio p{
+    font-size: 1.0em;
+    text-align: center;
+    margin: 0px;
 }
 
 img.logo {
@@ -159,10 +170,12 @@ img.logo {
 }
 
 img.biopic{
-    width: 150px;
-    align: left;
-    margin-right: 1.0em;
-    margin-bottom: 1.0em;
+    width: 80%;
+    display: block;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 0.2em;
+    cursor: pointer;
 }
 
 img.icon{
