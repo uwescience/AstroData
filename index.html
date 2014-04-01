@@ -98,7 +98,8 @@
           <div class="bio" style="float:left">
      <img src="/AstroData/media/images/ivezic.jpg"
         class="biopic" id="biopicŽeljkoIvezić" align="left"
-        onclick="displayBio('ŽeljkoIvezić', 'fullbio');">
+         onclick="displayBio('ŽeljkoIvezić', 'fullbio');">
+     <p><b onclick="displayBio('ŽeljkoIvezić', 'fullbio');">Željko Ivezić</b></p>
    </div>
    <div id="ŽeljkoIvezić" style="display: none;">
      <p><b>Željko Ivezić</b>
@@ -113,7 +114,8 @@
     <div class="bio" style="float:left">
      <img src="/AstroData/media/images/hogg.jpg"
         class="biopic" id="biopicDavidWHogg" align="left"
-        onclick="displayBio('DavidWHogg', 'fullbio');">
+         onclick="displayBio('DavidWHogg', 'fullbio');">
+     <p><b onclick="displayBio('DavidWHogg', 'fullbio');">David W. Hogg</b></p>
    </div>
    <div id="DavidWHogg" style="display: none;">
      <p><b>David W. Hogg</b>
@@ -129,7 +131,8 @@
     <div class="bio" style="float:left">
      <img src="/AstroData/media/images/marshall.jpg"
         class="biopic" id="biopicPhilMarshall" align="left"
-        onclick="displayBio('PhilMarshall', 'fullbio');">
+         onclick="displayBio('PhilMarshall', 'fullbio');">
+     <p><b onclick="displayBio('PhilMarshall', 'fullbio');">Phil Marshall</b></p>
    </div>
    <div id="PhilMarshall" style="display: none;">
      <p><b>Phil Marshall</b>
@@ -145,7 +148,8 @@
     <div class="bio" style="float:left">
      <img src="/AstroData/media/images/perez.jpg"
         class="biopic" id="biopicFernandoPerez" align="left"
-        onclick="displayBio('FernandoPerez', 'fullbio');">
+         onclick="displayBio('FernandoPerez', 'fullbio');">
+     <p><b onclick="displayBio('FernandoPerez', 'fullbio');">Fernando Perez</b></p>
    </div>
    <div id="FernandoPerez" style="display: none;">
      <p><b>Fernando Perez</b>
@@ -161,7 +165,8 @@
     <div class="bio" style="float:left">
      <img src="/AstroData/media/images/vanderplas.jpg"
         class="biopic" id="biopicJakeVanderPlas" align="left"
-        onclick="displayBio('JakeVanderPlas', 'fullbio');">
+         onclick="displayBio('JakeVanderPlas', 'fullbio');">
+     <p><b onclick="displayBio('JakeVanderPlas', 'fullbio');">Jake VanderPlas</b></p>
    </div>
    <div id="JakeVanderPlas" style="display: none;">
      <p><b>Jake VanderPlas</b>
@@ -174,7 +179,6 @@
      <p><p>Jake VanderPlas is currently the Director of Research in the Physical Sciences at the University of Washington’s eScience Institute, where his research is primarily in the area of novel statistical approaches to datasets from astronomy and other fields. He is co-author of the graduate-level text, <i>Statistics, Data Mining, and Machine Learning in Astronomy</i>, and is a maintainer and/or frequent contributor to many scientific open source Python projects, including SciPy, Scikit-learn, astroML, and others. He occasionally blogs about Python, machine learning, scientific visualization, open science, and related topics at <a href='http://jakevdp.github.io'>Pythonic Perambulations</a>.</p></p>
    </div>
   </div>
-  <div class="block" id="fullbio" style="display: none;"></div>
 </section>
 
 <section id="fountain"></section>
@@ -200,22 +204,31 @@
   
       <script defer="defer" src="/AstroData/media/js/main.js"></script>
     <script type="text/JavaScript">
-      var currentBio = null;
-      function displayBio(srcID, destID){
-        if(currentBio == srcID){
-          currentBio = null;
-          $("#" + destID).hide(400,
-                function(){
-                   document.getElementById(destID).innerHTML = "";
-                   $(".biopic").css({opacity:1.0});
-                });
-        }else{
-          currentBio = srcID;
-          $(".biopic").css({opacity:0.3});
-          $("#biopic" + srcID).css({opacity:1.0});
-          $("#" + destID).hide()
+      var currentID = null;
+      function displayBio(srcID){
+        var imgID = "biopic" + srcID;
+        var destID = "displayBio" + srcID;
+
+        // first time around we move the content of the hidden bio div to
+        // the correctly-placed destination div
+        if ($("#" + destID).length == 0){
+          var section = $("#" + srcID).parent().parent();
+          section.append("<div class='block' id='" + destID + "' style='display:none;'></div>");
           document.getElementById(destID).innerHTML = document.getElementById(srcID).innerHTML;
-          $("#" + destID).show(400);
+          $("#" + srcID).remove();
+        }
+        if(currentID == srcID){
+          // clicking on the highlighted picture: hide the bio
+          $(".biopic").animate({opacity:1.0}, 200);
+          $("#" + destID).hide(200);
+          currentID = null;
+        }else{
+          // clicking on a non-highlighted picture: switch bios
+          if(currentID !== null){$("#displayBio" + currentID).hide(200);}
+          $("#" + imgID).animate({opacity:1.0}, 200);
+          $(".biopic").not("#" + imgID).animate({opacity:0.3}, 200);
+          $("#" + destID).show(200);
+          currentID = srcID;
         }
       }
     </script>
