@@ -29,29 +29,28 @@
 
 {% macro gen_bio(img, name, twitter, github, website, bio) -%}
    {% set bioid = name|replace(' ','')|replace('.','') -%}
-   <div class="bio" style="float:left">
-     <img src="{{ media_url(img) }}"
-        class="biopic" id="biopic{{ bioid }}" align="left"
-         onclick="displayBio('{{ bioid }}', 'fullbio');">
-     <p><b onclick="displayBio('{{ bioid }}', 'fullbio');">{{ name }}</b></p>
-   </div>
-   <div id="{{ bioid }}" style="display: none;">
-     <p><b>{{ name }}</b>
-     {% if twitter -%}
-     <a href="http://twitter.com/{{ twitter }}">
-       <img src="{{ media_url("images/twitter-black.png") }}" class="icon" alt="twitter" title="twitter">
-     </a>
-     {%- endif %}
-     {% if github -%}
-     <a href="http://github.com/{{ github }}">
-       <img src="{{ media_url("images/github-black.png") }}" class="icon" alt="github" title="github">
-     </a>
-     {%- endif %}
-     {% if website -%}
-     <a href="{{ website }}">
-       <img src="{{ media_url("images/www-black.png") }}" class="icon" alt="website" title="website">
-     {%- endif %}
-     </a></p>
-     <p>{{ bio }}</p>
+   <div class="bio" id="{{ bioid }}" style="float:left"
+     onclick="displayBio('{{ bioid }}', 'fullbio');">
+     <img src="{{ media_url(img) }}" class="bioPic" align="left">
+     <p class="bioName"><b>{{ name }}</b></p>
+     <div class="fullBio" style="display: none;">
+       <p><b>{{ name }}</b>
+       {% if twitter -%}
+       <a href="http://twitter.com/{{ twitter }}">
+         <img src="{{ media_url("images/twitter-black.png") }}" class="icon" alt="twitter" title="twitter">
+       </a>
+       {%- endif %}
+       {% if github -%}
+       <a href="http://github.com/{{ github }}">
+         <img src="{{ media_url("images/github-black.png") }}" class="icon" alt="github" title="github">
+       </a>
+       {%- endif %}
+       {% if website -%}
+       <a href="{{ website }}">
+         <img src="{{ media_url("images/www-black.png") }}" class="icon" alt="website" title="website">
+       {%- endif %}
+       </a></p>
+       <p>{{ bio }}</p>
+     </div>
    </div>
 {%- endmacro %}

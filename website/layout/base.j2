@@ -54,30 +54,32 @@
     <script defer="defer" src="{{ media_url('js/main.js') }}"></script>
     <script type="text/JavaScript">
       var currentID = null;
-      function displayBio(srcID){
-        var imgID = "biopic" + srcID;
-        var destID = "displayBio" + srcID;
+      function displayBio(bioID){
+        var bioDiv = $("#" + bioID);
+        var fullBio = $(".displayBio." + bioID);
 
         // first time around we move the content of the hidden bio div to
         // the correctly-placed destination div
-        if ($("#" + destID).length == 0){
-          var section = $("#" + srcID).parent().parent();
-          section.append("<div class='block' id='" + destID + "' style='display:none;'></div>");
-          document.getElementById(destID).innerHTML = document.getElementById(srcID).innerHTML;
-          $("#" + srcID).remove();
+        if (fullBio.length == 0){
+          $(bioDiv).parent().parent().append("<div class='block displayBio " + bioID + "' style='display:none;'></div>");
+          fullBio = $(".displayBio." + bioID);
+          fullBio.html(bioDiv.children(".fullBio").html());
+          bioDiv.children(".fullBio").remove();
         }
-        if(currentID == srcID){
-          // clicking on the highlighted picture: hide the bio
-          $(".biopic").animate({opacity:1.0}, 200);
-          $("#" + destID).hide(200);
+        if(currentID == bioID){
+          // clicking on the highlighted picture: hide bio & remove highlight
+          $(".bio").children().animate({opacity:1.0}, 200);
+          $(".displayBio").hide(200);
           currentID = null;
         }else{
           // clicking on a non-highlighted picture: switch bios
-          if(currentID !== null){$("#displayBio" + currentID).hide(200);}
-          $("#" + imgID).animate({opacity:1.0}, 200);
-          $(".biopic").not("#" + imgID).animate({opacity:0.3}, 200);
-          $("#" + destID).show(200);
-          currentID = srcID;
+          if(currentID !== null){
+            $(".displayBio." + currentID).hide(200);
+          }
+          bioDiv.children().animate({opacity:1.0}, 200);
+          $(".bio").not(bioDiv).children().animate({opacity:0.3}, 200);
+          fullBio.show(200);
+          currentID = bioID;
         }
       }
     </script>
