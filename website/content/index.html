@@ -18,8 +18,12 @@ description: 2014 AstroData Hack Week
       AstroData Hack Week is a week-long summer school / hack week /
       unconference focused on astrostatistics and data-intensive astronomy.
       The vision is to provide a space to encourange learning, research,
-      collaboration, and sharing of expertise, for the benefit of young
-      and experienced astronomical researchers alike.
+      collaboration, and sharing of expertise, for the benefit of both
+      young and experienced astronomical researchers.
+    </p>
+    <p>
+      Registration details will be posted soon! Check back here, or follow
+      <a href="http://twitter.com/AstroHackWeek">@AstroHackWeek</a> on Twitter.
     </p>
   </div>
 </section>
@@ -30,12 +34,106 @@ description: 2014 AstroData Hack Week
   <a name="schedule"></a>
   <div class="block">
     <h2>Schedule</h2>
+
     <p>
-      More information will be coming soon: please check back here! In the
-      meantime, you can keep an eye on the planning progress on our
-      <a href="http://github.com/uwescience/AstroData/wiki">GitHub Page</a>.
+    Each day will consist of <b>morning sessions</b> devoted to learning
+    fundamentals of computational astronomy, and <b>afternoon sessions</b>
+    devoted to unstructured hacking and collaboration, with the potential
+    for informal breakout sessions on special topics of interest.
+
+    The following is an initial draft of the schedule; there may be slight
+    modifications in the weeks leading up to the conference.
+    </p>
+
+    <h4>Monday, September 15th</h4>
+    <table>
+      <tr><td>9:00am-noon</td>
+	<td>
+	  Scientific Computing with Python
+	  <ul>
+	    <li>Interactive Computing & Reproducible Research with IPython</li>
+	    <li>Effective Computing with NumPy</li>
+	    <li>Visualization with Matplotlib</li>
+	    <li>Exploring computational tools available in SciPy</li>
+	  </ul>
+	</td>
+      </tr>
+      <tr><td>1:00pm-5:30pm</td><td>Hack time & Breakouts</td></tr>
+      <tr><td>5:30pm-6:00pm</td><td>Daily Wrap-up</td></tr>
+    </table>
+    <h4>Tuesday, September 16th</h4>
+    <table>
+      <tr><td>9:00am-noon</td>
+	<td>
+	  Classical Statistics & Modeling
+	  <ul>
+	    <li>Intro to classical probability theory</li>
+	    <li>Maximum likelihood Optimization & Uncertainty Quantification</li>
+	    <li>Goodness of Fit and Hypothesis Testing</li>
+	    <li>Confidence Estimates using Bootstrap</li>
+	  </ul>
+	</td>
+      </tr>
+      <tr><td>1:00pm-5:30pm</td><td>Hack time & Breakouts</td></tr>
+      <tr><td>5:30pm-6:00pm</td><td>Daily Wrap-up</td></tr>
+    </table>
+    <h4>Wednesday, September 17th</h4>
+    <table>
+      <tr><td>9:00am-noon</td>
+	<td>
+	  Bayesian Statistics & Modeling
+	  <ul>
+	    <li>Bayes' Theorem and Bayesian probability</li>
+	    <li>Bayesian Priors</li>
+	    <li>Posterior optimization, marginalization, and Uncertainty Quantification</li>
+	    <li>Hypothesis Testing</li>
+	    <li>Intro to Markov Chain Monte Carlo (MCMC) sampling</li>
+	  </ul>
+	</td>
+      </tr>
+      <tr><td>1:00pm-5:30pm</td><td>Hack time & Breakouts</td></tr>
+      <tr><td>5:30pm-6:00pm</td><td>Daily Wrap-up</td></tr>
+    </table>
+    <h4>Thursday, September 18th</h4>
+    <table>
+      <tr><td>9:00am-noon</td>
+	<td>
+	  Supervised Machine Learning & Model Fitting
+	  <ul>
+	    <li>Supervised Machine Learning: Classification vs Regression</li>
+	    <li>A survey of Classification techniques</li>
+	    <li>A survey of Regression techniques</li>
+	  </ul>
+	</td>
+      </tr>
+      <tr><td>1:00pm-5:30pm</td><td>Hack time & Breakouts</td></tr>
+      <tr><td>5:30pm-6:00pm</td><td>Daily Wrap-up</td></tr>
+      <tr><td><i>7:00pm-late</i></td><td><i>off-site dinner and hackathon</i></td></tr>
+    </table>
+    <h4>Friday, September 19th</h4>
+    <table>
+      <tr><td>10:00am-noon</td>
+	<td>
+	  Unsupervised Machine Learning & Data Mining
+	  <ul>
+	    <li>Dimensionality Reduction Algorithms</li>
+	    <li>Clustering Algorithms</li>
+	    <li>Density Estimation Algorithms</li>
+	  </ul>
+	</td>
+      </tr>
+      <tr><td>1:00pm-4:00pm</td><td>Hack time & Breakouts</td></tr>
+      <tr><td>4:00pm-4:30pm</td><td>Week Wrap-up</td></tr>
+    </table>
+    <p>
+      Because of the unique and unstructured nature of this hack week, we
+      suggest that you come prepared! Come with a project in mind, with data
+      to explore, with a colleague to collaborate with. This should not be a
+      week away from work, but a week to try some new approaches to your
+      current research topic!
     </p>
   </div>
+
 </section>
 
 <section id="fall-leaves"></section>
@@ -44,7 +142,7 @@ description: 2014 AstroData Hack Week
   <a name="people"></a>
   <div class="block">
     <h2>People</h2>
-    <p>The following folks have been involved with planning this event, and will be helping to facilitate the morning sessions:</p>
+    <p>The following folks have been involved with planning this event, and will be teaching the morning sessions and facilitating the afternoon hack times:</p>
 
       {% from "macros.j2" import gen_bio with context %}
     {{ gen_bio("images/ivezic.jpg", "Željko Ivezić",
