@@ -82,6 +82,10 @@ section h3{
     text-align: left;
 }
 
+section h4{
+    text-align: left;
+}
+
 section.text{
     border-bottom: none;
     padding-top: 2em;
@@ -186,4 +190,10 @@ img.icon{
 
 img.icon:hover {
    opacity: 0.8;
+}
+
+table, th, td {
+   vertical-align: top;
+   text-align: left;
+   padding-left: 1.5em;
 }
